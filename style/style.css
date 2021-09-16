@@ -15,6 +15,48 @@ body{
     background-size: 100% 100%;
 
 }
+.user-name{
+    width:100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+background-image: url(../assets/paperBackground.jpg);
+    z-index: 1;
+  
+}
+.dis{
+    display: none;
+}
+.parent{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; flex-direction: column;
+   
+}
+.parent input[type=text]{
+    border:none;
+    width: 80%;
+    text-align: center;
+    border-radius: 5px;
+    height: 5vh;
+    margin-top: 10px;
+    outline: none;
+}
+.parent input[type=button]{
+    outline: none;
+    border:none;
+    border: 1px solid grey;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 8px 20px;
+    font-weight: bolder;
+    letter-spacing: 3px;
+
+}
+
+
 header{
     margin-bottom: 1rem;
     padding: 25px;
