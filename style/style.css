@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Gloria Hallelujah', sans-serif;
+    font-size: 18px;
+
+}
+a{
+    text-decoration: none;
+}
+body{
+    width: 100vw;
+    background: url(../assets/paperBackground.jpg);
+    background-size: 100% 100%;
+
+}
+header{
+    margin-bottom: 1rem;
+    padding: 25px;
+    text-align: center;
+    margin: 15px;
+}
+header h3{  
+    animation: header-anime 4s ease-in-out;
+}
+.result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+
+}
+.result .player-score{
+    padding: 5px;
+}
+.result .computer-score{
+    padding: 5px;
+}
+.player-choice {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 120px;
+ 
+}
+.player-choice img{
+    height: 5rem;
+    
+}
+.player-choice img{
+    animation: anime 3s ease-in-out;
+}
+.play-again {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+.play-again button{
+    outline: none;
+    border: 1px solid grey;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 8px 30px;
+    font-weight: bolder;
+    letter-spacing: 4px;
+
+}
+footer{
+    width: 100vw;
+    height: 10vh;
+     position: absolute;
+     bottom: 0;
+     text-align: center;
+     background-color: aliceblue;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-top: 1px solid grey;
+
+}
+
+footer img{
+   height: 4vh;
+   margin-left: 15px;
+ 
+}
+@keyframes anime {
+    0%{       
+     transform: rotateY(180deg);     
+ }
+       
+    
+    
+}
+@keyframes header-anime {
+    0%{
+        color: crimson;
+        transform: translate(-100%);
+
+    }
+    100%{
+        color: crimson;
+        transform: rotateY(180deg);
+
+    }
+
+}
