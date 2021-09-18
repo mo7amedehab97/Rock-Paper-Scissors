@@ -37,9 +37,32 @@ function createImg(){
     newImg.src=imgSrc[i]
     playerChoice.appendChild(newImg)
     newImg.addEventListener("click",(i,b)=>{
+        console.log(i.target)
         b =computerChoice()
-        console.log(newImg.id,b)
+        decideWinner(newImg.id,b)
     })
     }
 }
 createImg()
+function decideWinner(player,compuetr){
+    let result = player+compuetr
+   switch(result){
+       case "rockrock":
+       case "paperpaper":
+       case "scissorscissor":
+        tie() 
+        break;  
+       case 'rockscissor':
+       case 'paperrock':
+       case 'scissorpaper':
+         win();
+         break;
+        case 'rockpaper':
+        case 'paperscissor':
+        case 'scissorrock':
+         lose();
+         break;
+
+          
+   }
+}
