@@ -15,7 +15,10 @@ let computerScore = document.querySelector(".computer-score")
 // set the options
 let theChoices =["rock","paper","scissor"]
 let imgSrc =["../assets/rock.png","../assets/paper.png","../assets/scissors.png"]
-let score =0;
+
+let pScore =0;
+let cScore =0;
+
 
 // the login 
 btnInp.addEventListener("click",()=>{
@@ -59,7 +62,7 @@ function decideWinner(player,compuetr){
        case "rockrock":
        case "paperpaper":
        case "scissorscissor":
-        tie() 
+        tie(player,compuetr) 
         break;  
        case 'rockscissor':
        case 'paperrock':
@@ -77,15 +80,20 @@ function decideWinner(player,compuetr){
 function win(player,computer){
  userTextSpan.textContent = player;
  computerTextSpan.textContent=computer;
- let newResult=score++
- userScore.textContent=newResult;
+
+ userScore.textContent=pScore++;
 
 }
 
 function lose(player,computer){
     userTextSpan.textContent = player;
     computerTextSpan.textContent=computer;
-    computerScore.textContent = score++;
-    console.log("haha you lose mother fucker ")
+    computerScore.textContent = cScore++;
+   
 
+}
+
+function tie(player,computer){
+    userTextSpan.textContent = player;
+    computerTextSpan.textContent=computer;
 }
