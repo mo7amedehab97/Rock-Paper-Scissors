@@ -2,11 +2,19 @@ let textInp = document.getElementById("text-inp");
 let btnInp = document.getElementById("btn-inp");
 let loginElement = document.querySelector(".user-name")
 let userNameElement = document.querySelector("header h3 span");
-let playerChoice =document.querySelector(".player-choice")
+let playerChoice =document.querySelector(".player-choice");
+let userTextSpan = document.querySelector(".user-choose span");
+let computerTextSpan = document.querySelector(".computer-choose span");
+let userScore =document.querySelector(".player-score")
+
+
+
+
 
 // set the options
 let theChoices =["rock","paper","scissor"]
 let imgSrc =["../assets/rock.png","../assets/paper.png","../assets/scissors.png"]
+let score =0;
 
 // the login 
 btnInp.addEventListener("click",()=>{
@@ -55,14 +63,20 @@ function decideWinner(player,compuetr){
        case 'rockscissor':
        case 'paperrock':
        case 'scissorpaper':
-         win();
+         win(player,compuetr);
          break;
         case 'rockpaper':
         case 'paperscissor':
         case 'scissorrock':
          lose();
          break;
-
-          
    }
+}
+
+function win(player,computer){
+ userTextSpan.textContent = player;
+ computerTextSpan.textContent=computer;
+ let newResult=score++
+ userScore.textContent=newResult;
+
 }
