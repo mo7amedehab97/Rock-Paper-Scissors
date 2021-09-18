@@ -5,7 +5,8 @@ let userNameElement = document.querySelector("header h3 span");
 let playerChoice =document.querySelector(".player-choice");
 let userTextSpan = document.querySelector(".user-choose span");
 let computerTextSpan = document.querySelector(".computer-choose span");
-let userScore =document.querySelector(".player-score")
+let userScore =document.querySelector(".player-score");
+let computerScore = document.querySelector(".computer-score")
 
 
 
@@ -68,7 +69,7 @@ function decideWinner(player,compuetr){
         case 'rockpaper':
         case 'paperscissor':
         case 'scissorrock':
-         lose();
+         lose(player,compuetr);
          break;
    }
 }
@@ -78,5 +79,13 @@ function win(player,computer){
  computerTextSpan.textContent=computer;
  let newResult=score++
  userScore.textContent=newResult;
+
+}
+
+function lose(player,computer){
+    userTextSpan.textContent = player;
+    computerTextSpan.textContent=computer;
+    computerScore.textContent = score++;
+    console.log("haha you lose mother fucker ")
 
 }
