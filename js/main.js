@@ -7,7 +7,12 @@ let userTextSpan = document.querySelector(".user-choose span");
 let computerTextSpan = document.querySelector(".computer-choose span");
 let userScore =document.querySelector(".player-score");
 let computerScore = document.querySelector(".computer-score");
-let countR =document.querySelector(".counter-rounds")
+let countR =document.querySelector(".counter-rounds");
+let winAudio = new Audio('./assets/win.mp3');
+let loseAudio = new Audio('./assets/lose.mp3');
+let tieAudio = new Audio('./assets/tie.mp3');
+
+
 
 
 
@@ -108,13 +113,28 @@ countR.textContent=++countRounds
 function game(playerScore,computerScore){
 if(countRounds === 5){
     if(playerScore > computerScore){
+        document.querySelector(".win").style.display="flex"
+        winAudio.play();
+        setInterval(()=>{
+            document.querySelector(".win").style.display="none"
+        },3000)
         console.log("you win ")
     }
     else if(computerScore> playerScore){
+        document.querySelector(".lose").style.display="flex"
+        loseAudio.play();
+        setInterval(()=>{
+            document.querySelector(".lose").style.display="none"
+        },3000)
         console.log("you looose ")
 
     }
     else{
+        document.querySelector(".tie").style.display="flex"
+        tieAudio.play();
+        setInterval(()=>{
+            document.querySelector(".tie").style.display="none"
+        },3000)
                 console.log("it's tie")
 
     }
