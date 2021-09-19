@@ -6,7 +6,8 @@ let playerChoice =document.querySelector(".player-choice");
 let userTextSpan = document.querySelector(".user-choose span");
 let computerTextSpan = document.querySelector(".computer-choose span");
 let userScore =document.querySelector(".player-score");
-let computerScore = document.querySelector(".computer-score")
+let computerScore = document.querySelector(".computer-score");
+let countR =document.querySelector(".counter-rounds")
 
 
 
@@ -14,10 +15,12 @@ let computerScore = document.querySelector(".computer-score")
 
 // set the options
 let theChoices =["rock","paper","scissor"]
-let imgSrc =["../assets/rock.png","../assets/paper.png","../assets/scissors.png"]
+let imgSrc =["./assets/rock.png","./assets/paper.png","./assets/scissors.png"]
 
 let pScore =0;
 let cScore =0;
+let countRounds =0;
+countR.textContent = countRounds
 
 
 // the login 
@@ -52,6 +55,7 @@ function createImg(){
         console.log(i.target)
         b =computerChoice()
         decideWinner(newImg.id,b)
+        game(pScore,cScore)
     })
     }
 }
@@ -80,15 +84,17 @@ function decideWinner(player,compuetr){
 function win(player,computer){
  userTextSpan.textContent = player;
  computerTextSpan.textContent=computer;
-
- userScore.textContent=pScore++;
+countR.textContent= ++countRounds
+ userScore.textContent= ++pScore;
 
 }
 
 function lose(player,computer){
     userTextSpan.textContent = player;
     computerTextSpan.textContent=computer;
-    computerScore.textContent = cScore++;
+    computerScore.textContent = ++cScore;
+countR.textContent=++countRounds
+
    
 
 }
@@ -96,4 +102,21 @@ function lose(player,computer){
 function tie(player,computer){
     userTextSpan.textContent = player;
     computerTextSpan.textContent=computer;
+countR.textContent=++countRounds
+
+}
+function game(playerScore,computerScore){
+if(countRounds === 5){
+    if(playerScore > computerScore){
+        console.log("you win ")
+    }
+    else if(computerScore> playerScore){
+        console.log("you looose ")
+
+    }
+    else{
+                console.log("it's tie")
+
+    }
+}    
 }
