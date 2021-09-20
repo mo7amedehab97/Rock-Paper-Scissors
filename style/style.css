@@ -23,7 +23,7 @@ body{
     left: 0;
 background-image: url(../assets/paperBackground.jpg);
     z-index: 1;
-  
+  display: none;
 }
 .dis{
     display: none;
@@ -149,4 +149,52 @@ footer img{
 
     }
 
+}
+.win{ 
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: url(../assets/paperBackground.jpg);
+    background-size: 100% 100%;
+    display: none;
+
+}
+.win iframe{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+
+
+}
+.lose{
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: url(../assets/paperBackground.jpg);
+    background-size: 100% 100%;
+    display: none;
+}
+.lose iframe{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+.tie{
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: url(../assets/paperBackground.jpg);
+    background-size: 100% 100%;
+    display: none;
+}
+.tie iframe{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
 }
