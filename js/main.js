@@ -11,6 +11,7 @@ let countR =document.querySelector(".counter-rounds");
 let winAudio = new Audio('./assets/win.mp3');
 let loseAudio = new Audio('./assets/lose.mp3');
 let tieAudio = new Audio('./assets/tie.mp3');
+let playAgainBtn = document.querySelector(".play-again")
 
 
 
@@ -39,7 +40,7 @@ btnInp.addEventListener("click",()=>{
 
 function showUserName(){
     let getUsername = localStorage.getItem("userName")
-    userNameElement.textContent = JSON.parse(getUsername);
+    userNameElement.textContent =getUsername;
     
 }
 showUserName()
@@ -118,6 +119,8 @@ if(countRounds === 5){
         setInterval(()=>{
             document.querySelector(".win").style.display="none"
         },3000)
+reset()
+       
         console.log("you win ")
     }
     else if(computerScore> playerScore){
@@ -126,6 +129,9 @@ if(countRounds === 5){
         setInterval(()=>{
             document.querySelector(".lose").style.display="none"
         },3000)
+    
+        reset()
+
         console.log("you looose ")
 
     }
@@ -135,8 +141,19 @@ if(countRounds === 5){
         setInterval(()=>{
             document.querySelector(".tie").style.display="none"
         },3000)
-                console.log("it's tie")
-
+reset()
+        
+       
+       
     }
 }    
 }
+function reset(){
+    pScore =0;
+    cScore =0;
+    countRounds =0;
+    userScore.textContent = 0;
+    computerScore.textContent = 0;
+    countR.textContent =0;
+}
+playAgainBtn.addEventListener("click", reset)
